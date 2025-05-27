@@ -2,8 +2,14 @@ body {
     background-color: #3a3b3c;
 }
 
+.big_clock {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
+
 p {
     text-align: center;
-    font-size: 70px;
+    font-size: 45px;
     color: white;
 }

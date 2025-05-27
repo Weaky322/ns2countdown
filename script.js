@@ -11,6 +11,10 @@ var x = setInterval(function() {
 
     document.getElementById("clock").innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
 
+    if (days < 10) {
+        document.getElementById("hype").innerHTML = "We are less than 10 days away!"
+    }
+
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("clock").innerHTML = "SWITCH 2 IS HERE!!"
