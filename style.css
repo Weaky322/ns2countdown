@@ -2,10 +2,33 @@ body {
     background-color: #3a3b3c;
 }
 
-.big_clock {
-    text-align: center;
-    font-size: 60px;
+#clock {
+    display:table;
+    margin:auto;
+
+    font-size: 80px;
     color: white;
+}
+
+#clock div {
+    display:table-cell;
+    padding: 5px;
+}
+
+#day_counter {
+    color: #04D9FF;
+}
+
+#hour_counter {
+    color: #04D9FF
+}
+
+#minute_counter {
+    color: #FF5C00;
+}
+
+#second_counter {
+    color: #FF5C00;
 }
 
 p {

@@ -1,3 +1,10 @@
+const day_counter = document.getElementById("day_counter");
+const hour_counter = document.getElementById("hour_counter");
+const minute_counter = document.getElementById("minute_counter");
+const second_counter = document.getElementById("second_counter");
+
+const hype = document.getElementById("hype");
+
 const switch2Date = new Date("June 5, 2025 00:00:00").getTime();
 
 var x = setInterval(function() {
@@ -9,14 +16,45 @@ var x = setInterval(function() {
     var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
     var seconds = Math.floor(distance % (1000 * 60) / 1000);
 
-    document.getElementById("clock").innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
+    day_counter.innerHTML = "0" + days;
 
-    if (days < 10) {
-        document.getElementById("hype").innerHTML = "We are less than 10 days away!"
+    if (hours < 10) {
+        hour_counter.innerHTML = "0" + hours;
+    }
+    else {
+        hour_counter.innerHTML = hours;
+    }
+    
+    if (minutes <10) {
+        minute_counter.innerHTML = "0" + minutes;
+    }
+    else {
+        minute_counter.innerHTML = minutes;
     }
 
-    if (distance < 0) {
+    if (seconds < 10) {
+        second_counter.innerHTML = "0" + seconds;
+    }
+    else {
+        second_counter.innerHTML = seconds;
+    }
+
+
+    if (days < 10) {
+        hype.innerHTML = "We are less than 10 days away!";
+    }
+    else if (days < 5) {
+        hype.innerHTML = "We are less than 5 days away!";
+    }
+    else if (days < 3) {
+        hype.innerHTML = "We are less than 3 days away!!";
+    }
+    else if (days < 1) {
+        hype.innerHTML = "We are less than 24 hours away!!";
+    }
+    else if (distance < 0) {
         clearInterval(x);
-        document.getElementById("clock").innerHTML = "SWITCH 2 IS HERE!!"
+        hype.innerHTML = "SWITCH 2 IS HERE!!";
+        document.getElementById("clock").remove();
     }
 }, 1000);
