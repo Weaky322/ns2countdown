@@ -16,6 +16,9 @@ var x = setInterval(function() {
     var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
     var seconds = Math.floor(distance % (1000 * 60) / 1000);
 
+    var all_hours = Math.floor(distance / (1000 * 60 * 60));
+
+
     day_counter.innerHTML = "0" + days;
 
     if (hours < 10) {
@@ -40,21 +43,14 @@ var x = setInterval(function() {
     }
 
 
-    if (days < 10) {
-        hype.innerHTML = "We are less than 10 days away!";
-    }
-    else if (days < 5) {
-        hype.innerHTML = "We are less than 5 days away!";
-    }
-    else if (days < 3) {
-        hype.innerHTML = "We are less than 3 days away!!";
-    }
-    else if (days < 1) {
-        hype.innerHTML = "We are less than 24 hours away!!";
-    }
-    else if (distance < 0) {
+    if (distance < 0) {
         clearInterval(x);
         hype.innerHTML = "SWITCH 2 IS HERE!!";
-        document.getElementById("clock").remove();
+        day_counter.innerHTML = "00";
+        hour_counter.innerHTML = "00";
+        minute_counter.innerHTML = "00";
+        second_counter.innerHTML = "00";
     }
+    
+    hype.innerHTML = "We are less than a week away!"
 }, 1000);
