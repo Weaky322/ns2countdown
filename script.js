@@ -28,7 +28,7 @@ var x = setInterval(function() {
         hour_counter.innerHTML = hours;
     }
     
-    if (minutes <10) {
+    if (minutes < 10) {
         minute_counter.innerHTML = "0" + minutes;
     }
     else {
@@ -42,6 +42,13 @@ var x = setInterval(function() {
         second_counter.innerHTML = seconds;
     }
 
+    
+    if (all_hours <= 100) {
+        hype.innerHTML = "There are only " + all_hours + " hours left!!"
+    }
+    else {
+        hype.innerHTML = "We are less than a week away!"
+    }
 
     if (distance < 0) {
         clearInterval(x);
@@ -51,6 +58,4 @@ var x = setInterval(function() {
         minute_counter.innerHTML = "00";
         second_counter.innerHTML = "00";
     }
-    
-    hype.innerHTML = "We are less than a week away!"
 }, 1000);
