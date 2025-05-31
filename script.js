@@ -43,11 +43,14 @@ var x = setInterval(function() {
     }
 
     
-    if (all_hours <= 100) {
-        hype.innerHTML = "There are only " + all_hours + " hours left!!"
+    if (all_hours < 1) {
+        hype.innerHTML = "We are less than an hour away!!!";
+    }
+    else if (all_hours <= 100) {
+        hype.innerHTML = "There are only " + all_hours + " hours left!!";
     }
     else {
-        hype.innerHTML = "We are less than a week away!"
+        hype.innerHTML = "We are less than 5 days away!";
     }
 
     if (distance < 0) {
